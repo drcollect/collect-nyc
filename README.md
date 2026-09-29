@@ -2,7 +2,7 @@
 
 The five Collect cars (hypercar, 80s wedge, rally-raid, endurance, streamliner) driving through all of Manhattan in the browser: real streets, 45,000 real buildings, every street tree, timed collectible drops, a rival crew, seven races on real routes, a car-drop garage, and street furniture you can knock over.
 
-**Play it:** https://collect-nyc-chi.vercel.app
+**Play it:** https://collect-nyc-chi.vercel.app, or on GitHub Pages: https://drcollect.github.io/collect-nyc/
 
 ![7th Avenue](renders/city-detail/01-7th-avenue.png)
 
@@ -37,6 +37,8 @@ uv run --python 3.12 --with shapely,numpy,mapbox_earcut scripts/build_tiles.py
 cd game && npm install && npm run dev     # http://127.0.0.1:5191
 ```
 
+To publish to GitHub Pages: `npm run build:pages` in `game/` builds for the `/collect-nyc/` path into `game/dist-pages/`, which goes on the `gh-pages` branch.
+
 The data download is about 100 MB; the build takes about 25 seconds and writes `game/public/city/` (about 40 MB). `?car=rally` picks the starting car and `?at=x,z` the start spot (metres; Times Square is 0,0). In the dev console, `__nyc.autopilot = true` lets the race AI drive your car.
 
 The world is flat and in metres, rotated 29° so the avenues run along Z (uptown is −Z). Where the FDR and other highways run under decks or over low sheds, the builder cuts the highway out of those footprints so the roads stay open.
@@ -46,7 +48,7 @@ The world is flat and in metres, rotated 29° so the avenues run along Z (uptown
 - Buildings: NYC Open Data, Building Footprints (5zhs-2jue)
 - Shoreline: NYC Open Data, Borough Boundaries (gthc-hcne)
 - Street trees: NYC Open Data, 2015 Street Tree Census (uvpi-gqnh)
-- Streets, parks, water and traffic signals: © OpenStreetMap contributors, ODbL
+- Streets, parks, water and traffic signals: © OpenStreetMap contributors, ODbL. The city tiles on the `gh-pages` branch are a database derived from it and are shared under the ODbL.
 
 ## Folders
 
