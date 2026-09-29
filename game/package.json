@@ -8,7 +8,8 @@
     "build": "tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
-    "deploy": "vercel deploy --prod"
+    "deploy": "vercel deploy --prod",
+    "build:pages": "tsc --noEmit && vite build --base /collect-nyc/ --outDir dist-pages"
   },
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.20.0",

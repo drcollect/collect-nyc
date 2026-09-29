@@ -282,7 +282,7 @@ export async function loadCarTemplates(onProgress?: (done: number, total: number
   const out = new Map<string, CarTemplate>();
   let manifest: ManifestEntry[] = [];
   try {
-    const res = await fetch('/models/cars/cars.json', { cache: 'no-cache' });
+    const res = await fetch(`${import.meta.env.BASE_URL}models/cars/cars.json`, { cache: 'no-cache' });
     if (res.ok) manifest = await res.json();
   } catch {
     /* no manifest yet */
@@ -294,7 +294,7 @@ export async function loadCarTemplates(onProgress?: (done: number, total: number
       let t: CarTemplate;
       if (entry) {
         try {
-          t = await loadGlbTemplate(spec, `/models/cars/${entry.file}?v=${Date.now() % 1e7}`);
+          t = await loadGlbTemplate(spec, `${import.meta.env.BASE_URL}models/cars/${entry.file}?v=${Date.now() % 1e7}`);
         } catch (e) {
           console.warn(`[cars] ${spec.id}: GLB failed, using placeholder`, e);
           t = placeholderTemplate(spec);

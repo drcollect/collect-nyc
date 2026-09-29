@@ -12,3 +12,4 @@ __pycache__/
 .claude/
 # private design notes, not published
 refs/
+THREAD.md

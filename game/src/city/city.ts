@@ -57,7 +57,7 @@ export class City {
   /** loaded tiles, for the debug readout */
   stats = { loaded: 0, colliders: 0, loading: 0 };
 
-  constructor(private world: RAPIER.World, base = '/city/') {
+  constructor(private world: RAPIER.World, base = `${import.meta.env.BASE_URL}city/`) {
     this.base = base;
     this.group.name = 'City';
   }

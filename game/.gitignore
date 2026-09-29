@@ -3,3 +3,4 @@ dist
 .shots
 .vercel
 .env*
+dist-pages/
