@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vercel/
+.env*
+.shots/
+.DS_Store
+# downloaded source data and the generated city: rebuilt by scripts/build_tiles.py
+data/raw/*.json
+data/raw/*.geojson
+game/public/city/
+__pycache__/
+.claude/
+# private design notes, not published
+refs/
